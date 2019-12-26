@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from airflow import DAG
-from custom_operator.submit_operator import SubmitOperator
+from airflow.operators import SubmitOperator
 
 conn_id = "emr_id"
 
