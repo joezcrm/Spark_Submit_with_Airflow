@@ -1,6 +1,11 @@
 import sys
 from pyspark.sql import SparkSession
 
+# input directory
+input_dir = "s3://joezcrmdb/data_source/"
+# output directory
+output_dir = "s3://joezcrmdb/data/final/"
+
 def process_fact_immigration(spark, input_folder, output_folder):
     """
     A function to check whether the data processing succeeded
@@ -126,8 +131,7 @@ def main():
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.8.5") \
         .getOrCreate()
-    process_fact_immigration(spark, "s3://joezcrmdb/data_source/" + subfolder, \
-        "s3://joezcrmdb/data/final/")
+    process_fact_immigration(spark, input_dir + subfolder, output_dir)
 
 if __name__ == "__main__":
     main()
