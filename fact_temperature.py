@@ -9,6 +9,11 @@ from pyspark.sql.types import (StructType,
                                StringType)
 import argparse
 
+# input directory
+input_dir = "s3://joezcrmdb/data_source/"
+# output directory
+output_dir = "s3://joezcrmdb/data/final/"
+
 # udf to process coordinates
 @udf (DoubleType())
 def to_numeric_lat(text):
@@ -95,6 +100,7 @@ def process_fact_temperature(spark, input_folder, output_folder):
     
     
 def main():
+    # Obtain argument from command line
     subfolder = ""
     if len(sys.argv) > 1:
         subfolder = sys.argv[1]
@@ -102,8 +108,7 @@ def main():
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.8.5") \
         .getOrCreate()
-    process_fact_temperature(spark, "s3://joezcrmdb/data_source/" + subfolder, 
-        "s3://joezcrmdb/data/final/")
+    process_fact_temperature(spark, input_dir + subfolder, output_dir)
     
 if __name__ == "__main__":
     main()
