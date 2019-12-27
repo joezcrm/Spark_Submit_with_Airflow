@@ -1,5 +1,5 @@
 # This code is the source code for bash operator,
-# and, it is copied directly from the airflow's website
+# copied directly from the airflow's documentations
 # but a small change is made to generate the correct command I need.
 # I need to add the execution date to the end of bash_command
 # This only works on the scole of this project
@@ -80,7 +80,9 @@ class SubmitOperator(BaseOperator):
                                  airflow_context_vars.items()]))
         env.update(airflow_context_vars)
 
-        # The following three lines are what I added
+        # The following three lines are added
+        # Construct a string representing the sub-directory of the data files
+        # It is inserted into the placeholder of sub_command
         exe_date = context.get("execution_date")
         sub_command = "{}/{}/{}/".format(exe_date.year,
                                           exe_date.month,
