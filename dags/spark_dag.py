@@ -4,6 +4,7 @@ from airflow.hooks.base_hook import BaseHook
 from submit_operator import SubmitOperator
 from airflow.operators.python_operator import PythonOperator
 
+# Specify arguments
 conn_id = "emr_id"
 conn = BaseHook.get_connection(conn_id)
 user_name = conn.login
@@ -11,7 +12,6 @@ host = conn.host
 key_file = conn.extra_dejson.get("key_file")
 s3_bucket = 's3://joezcrmdb/'
 
-# Construct command with placehlder to be inserted in SubmitOperator
 ssh_command = 'ssh -i ' + key_file + ' ' + user_name + '@' + host + ' '
 submit_command = '/usr/bin/spark-submit --master yarn ' + s3_bucket
 
@@ -31,8 +31,14 @@ dag = DAG('spark_dag',
           schedule_interval = '@daily'
          )
 
-# Task to process temperature data
+
+# Construct command with placeholder
+# A value of {year}/{month}/{day}/ string will be inserted into the command
+# The command first connect to the server using "ssh_command",
+# and submit the python script to spark
+# The following commands are constructed in the same way
 command = ssh_command + '"' + submit_command + 'fact_temperature.py {}"'
+# Task to process temperature data
 process_temperature_task = SubmitOperator(
     task_id = 'process_temperature',
     dag = dag,
