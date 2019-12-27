@@ -99,6 +99,7 @@ def process_fact_airport(spark, input_folder, output_folder):
     
 
 def main():
+    # Obtain argument from command line
     subfolder = ""
     if len(sys.argv) > 1:
         subfolder = sys.argv[1]
