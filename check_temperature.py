@@ -56,6 +56,7 @@ def check_temperature(spark, input_folder, output_folder):
         raise ValueError(error_message)
     
 def main():
+    # Obtain argument from command line
     subfolder = ""
     if len(sys.argv) > 1:
         subfolder = sys.argv[1]
