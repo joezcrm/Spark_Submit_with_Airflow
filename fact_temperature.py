@@ -7,7 +7,6 @@ from pyspark.sql.types import (StructType,
                                IntegerType,
                                DateType,
                                StringType)
-import argparse
 
 # input directory
 input_dir = "s3://joezcrmdb/data_source/"
