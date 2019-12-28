@@ -35,5 +35,6 @@ The airport data is processed in the python script _fact_airport.py_ by running 
 The scripts _fact_temperature.py_ and _fact_immigration.py_ process temperature and immigration, respectively. Since temperature and
 and immigration data can be updated once a day, an Airflow data pipeline is created to submit these scripts with the assumption that 
 the data are partitioned first by year, then by month, and by day. To build a correct spark-submit command, the source code of
-BashOperator is modified sightly and renamed as SubmitOperator.
+BashOperator is modified sightly and renamed as SubmitOperator.  Data quality checks of the resulting temperature and immigration data
+is also added.
 ## Data Schema Resulted
