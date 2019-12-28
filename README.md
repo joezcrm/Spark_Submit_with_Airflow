@@ -20,15 +20,15 @@ and US immigration records.  All the data sources were download from Udacity and
 tesing purpose.  Except changing the format of immigration records to parquet, the formats of other data sources 
 were kept as csv.  The immigration data file was renamed as **immigration_data.parquet**. The data source directory is
 as follows:
->~/2019/12/27/GlobalLandTemperaturesByCity.csv
->~/2019/12/27/immigration_data.parquet
->~/code/country_code.csv
->~/code/port_code.csv
->~/code/state_code.csv
->~/code/transportation_mode.csv
->~/code/visa_type.csv
->~/GlobalLandTemperaturesByCity.csv
->~/airport-codes_csv.csv
+>~/2019/12/27/GlobalLandTemperaturesByCity.csv  
+>~/2019/12/27/immigration_data.parquet  
+>~/code/country_code.csv  
+>~/code/port_code.csv  
+>~/code/state_code.csv  
+>~/code/transportation_mode.csv  
+>~/code/visa_type.csv  
+>~/GlobalLandTemperaturesByCity.csv  
+>~/airport-codes_csv.csv  
 >~/us-cities-demographics.csv
 ## Assumption
 This project assumes that the data source format, the name of data sources, the data field names, and data field types are constant.
