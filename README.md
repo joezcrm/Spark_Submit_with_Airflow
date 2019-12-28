@@ -14,6 +14,7 @@ inbound traffic.
 >{
 >"key_file": "private_key_path.pem"
 >}
+5. The scripts to be submitted should load to a s3 bucket so that the EC2 instance can read the scripts.
 ## Data Source
 The data sources include US city demographics information, global airport codes, global monthly average temperature,
 and US immigration records.  All the data sources were download from Udacity and uploaded to my s3 bucket for
