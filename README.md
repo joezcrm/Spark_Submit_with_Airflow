@@ -1,4 +1,4 @@
-# udacity_capstone
+# Spark_Submit_with_Airflow
 ## Purpose
 This project is to create a data schema based on various data sources and a data pipeline from these sources
 using Airflow, Spark, and AWS EMR. Because of Spark, the data pipeline created is able to process a very large data set.
