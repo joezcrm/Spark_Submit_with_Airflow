@@ -86,7 +86,7 @@ def process_fact_immigration(spark, input_folder, output_folder):
                 cast(i94visa AS int) AS visa_id,
                 visatype AS visa_type,
                 visapost AS visa_post,
-                biryear AS birth_year,
+                cast(biryear AS int) AS birth_year,
                 date_add('1960-01-01', cast(arrdate AS int)) AS arrival_date,
                 entdepa AS arrival_flag,
                 occup AS occupation,
