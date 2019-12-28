@@ -20,7 +20,7 @@ and US immigration records.  All the data sources were download from Udacity and
 tesing purpose.  Except changing the format of immiigration records to parquet, the formats of other data sources 
 were kept as csv.
 ## Assumption
-This project assumes that the data source format, the data field names, and data field types are constant.
+This project assumes that the data source format, the name of data sources, the data field names, and data field types are constant.
 ## Data Processing
 The python scripts and Jupyter notebook included here will perform the data processing task.  The initial data explorations
 are not included here.
