@@ -17,8 +17,8 @@ inbound traffic.
 ## Data Source
 The data sources include US city demographics information, global airport codes, global monthly average temperature,
 and US immigration records.  All the data sources were download from Udacity and uploaded to my s3 bucket for
-tesing purpose.  Except changing the format of immiigration records to parquet, the formats of other data sources 
-were kept as csv.
+tesing purpose.  Except changing the format of immigration records to parquet, the formats of other data sources 
+were kept as csv.  The immigration data file was renamed as **immigration_data.parquet**.
 ## Assumption
 This project assumes that the data source format, the name of data sources, the data field names, and data field types are constant.
 ## Data Processing
