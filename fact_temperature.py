@@ -78,7 +78,7 @@ def process_fact_temperature(spark, input_folder, output_folder):
         FROM
         (
             SELECT cast(record_date AS string) AS date_str, record_date, 
-                average_temp, uncertainty, city, numeric_lat, numeric_long
+                average_temp, uncertainty, UPPER(city) AS city, numeric_lat, numeric_long
             FROM temperature
             WHERE country = 'United States'
         ) AS temp
@@ -86,7 +86,7 @@ def process_fact_temperature(spark, input_folder, output_folder):
         (
             SELECT DISTINCT 
                 cast(city_id AS string) AS city_id_str, 
-                city_id, city, latitude, longitude
+                city_id, UPPER(city) AS city, latitude, longitude
             FROM cities
         ) AS ci
         ON temp.city = ci.city
