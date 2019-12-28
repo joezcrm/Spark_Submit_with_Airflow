@@ -39,5 +39,19 @@ BashOperator is modified sightly and renamed as SubmitOperator.  Data quality ch
 is also added.
 ## Data Schema Resulted
 ### Common Dimension
-File Name: **dimension_cities.parquet**
-
+File Name: **common_dimension/dimension_cities.parquet**
+![cities](/images/dimension_cities.png)
+### Races
+File Name: **races/fact_races.parquet**
+![races](/images/fact_races.png)
+### Airport
+File Name: **airports/fact_airports.parquet**
+![airport](/images/fact_airports.png)
+### Temperature
+File Name: **temperature/fact_temperature.parquet**
+![temp](/images/fact_temperature.png)
+### Immigration
+File Name: **immigration/fact_immigration.parquet**
+![imm](/images/fact_immigration.png)
+File Name: **immigration/dimension_countries.parquet**
+![countries](/images/dimension_countries.png)
