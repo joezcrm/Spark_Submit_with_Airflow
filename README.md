@@ -38,3 +38,6 @@ the data are partitioned first by year, then by month, and by day. To build a co
 BashOperator is modified sightly and renamed as SubmitOperator.  Data quality checks of the resulting temperature and immigration data
 is also added.
 ## Data Schema Resulted
+### Common Dimension
+File Name: **dimension_cities.parquet**
+
